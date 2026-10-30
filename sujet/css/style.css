@@ -35,7 +35,7 @@
 }
 
 * {
-  box-sizing: border-box;
+  @apply box-border;
 }
 
 body {
@@ -47,16 +47,15 @@ h1, h2, h3 {
 }
 
 p {
-  margin: 0 0 var(--space-2);
+  @apply mb-(--space-2);
 }
 
 a {
-  color: var(--color-primary);
+  @apply text-(--color-primary);
 }
 
 img {
-  max-width: 100%;
-  display: block;
+  @apply max-w-full block;
 }
 
 .container {
@@ -72,8 +71,7 @@ img {
 }
 
 .btn--primary {
-  background: var(--color-primary);
-  color: #fff;
+  @apply bg-(--color-primary) text-white;
 }
 
 .btn--primary:hover {
@@ -85,8 +83,7 @@ img {
 }
 
 .btn--outline:hover {
-  background: var(--color-primary);
-  color: #fff;
+  @apply bg-(--color-primary) text-white;
 }
 
 /* ============================= Header / Nav ============================= */
@@ -467,7 +464,7 @@ img {
   }
 
   .nav {
-    @apply none absolute top-full left-0 right-0 bg-(--color-bg-alt) border-b border-(--color-border) py-(--space-2) px-(--space-3);
+    @apply hidden absolute top-full left-0 right-0 bg-(--color-bg-alt) border-b border-(--color-border) py-(--space-2) px-(--space-3);
   }
 
   .nav--open {
