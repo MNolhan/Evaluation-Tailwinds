@@ -101,11 +101,20 @@ img {
 }
 
 .nav__toggle {
-  @apply hidden bg-transparent border border-(--color-border) rounded-(--radius) px-3 py-2 text-xl cursor-pointer;
+  @apply inline-flex items-center justify-center bg-transparent border border-(--color-border) rounded-(--radius) px-3 py-2 text-xl cursor-pointer md:hidden;
+}
+
+.nav {
+  @apply hidden absolute top-full left-0 right-0 bg-(--color-bg-alt) border-b border-(--color-border) py-(--space-2) px-(--space-3)
+      md:block md:static md:border-0 md:p-0;
+}
+
+.nav--open {
+  @apply block;
 }
 
 .nav__list {
-  @apply flex gap-(--space-4) list-none m-0 p-0;
+  @apply flex flex-col gap-(--space-2) list-none m-0 p-0 md:flex-row md:gap-(--space-4);
 }
 
 .nav__link {
@@ -118,13 +127,13 @@ img {
 }
 
 .header__actions {
-  @apply flex items-center gap-(--space-3);
+  @apply hidden md:flex items-center gap-(--space-3);
 }
 
 /* ============================= Hero ============================= */
 
 .hero__inner {
-  @apply grid grid-cols-[1.1fr_0.9fr] gap-(--space-5) items-center *:min-w-0;
+  @apply grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-(--space-5) items-center *:min-w-0;
 }
 
 /* Un <img> comme enfant direct d'une grille garde sa taille intrinsèque
@@ -141,7 +150,7 @@ img {
 }
 
 .hero__actions {
-  @apply flex gap-(--space-2) mt-(--space-3);
+  @apply flex flex-col sm:flex-row gap-(--space-2) mt-(--space-3);
 }
 
 .hero__image {
@@ -172,7 +181,7 @@ img {
 /* ============================= Grille de plats (cartes) ============================= */
 
 .dish-grid {
-  @apply grid grid-cols-[repeat(3,1fr)] gap-(--space-4); 
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2k:grid-cols-4 gap-(--space-4);
 }
 
 .dish-card {
@@ -200,7 +209,7 @@ img {
 /* ============================= Témoignages ============================= */
 
 .testimonial-grid {
-  @apply grid grid-cols-[repeat(3,1fr)] gap-(--space-4); 
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--space-4);
 }
 
 .testimonial {
@@ -253,7 +262,7 @@ img {
 /* ============================= Formulaire de contact ============================= */
 
 .contact-grid {
-  @apply grid grid-cols-2 gap-(--space-5);
+  @apply grid grid-cols-1 md:grid-cols-2 gap-(--space-5);
 }
 
 .form__label {
@@ -284,7 +293,7 @@ img {
 }
 
 .site-footer__grid {
-  @apply grid grid-cols-3 gap-(--space-4) mb-(--space-4);
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-(--space-4) mb-(--space-4);
 }
 
 .site-footer__title {
@@ -293,79 +302,4 @@ img {
 
 .site-footer__bottom {
   @apply border-t border-[#3a2f28] pt-(--space-3) text-[0.85rem] text-[#8a7d70] text-center; 
-}
-
-/* ============================= Responsive (desktop-first) ============================= */
-
-@media (max-width: 900px) {
-  .hero__inner {
-    @apply grid-cols-1; 
-  }
-
-  .hero__title {
-    @apply text-[2.25rem];
-  }
-
-  .dish-grid,
-  .testimonial-grid {
-    @apply grid-cols-2;
-  }
-
-  .contact-grid {
-    @apply grid-cols-1;
-  }
-
-  .site-footer__grid {
-    @apply grid-cols-2;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav__toggle {
-    @apply inline-flex items-center justify-center;
-  }
-
-  /* Le bouton "Réserver" du header est retiré sur mobile pour laisser
-     la place au logo + burger ; il reste accessible via le hero et le
-     menu mobile ouvert. */
-  .header__actions {
-    @apply hidden;
-  }
-
-  .nav__list--mobile-only {
-    @apply list-item mt-(--space-1);
-  }
-
-  .nav {
-    @apply hidden absolute top-full left-0 right-0 bg-(--color-bg-alt) border-b border-(--color-border) py-(--space-2) px-(--space-3);
-  }
-
-  .nav--open {
-    @apply block;
-  }
-
-  .nav__list {
-    @apply flex-col gap-(--space-2);
-  }
-
-  .hero__title {
-    @apply text-[1.75rem];
-  }
-
-  .hero__actions {
-    @apply flex-col items-stretch;
-  }
-
-  .dish-grid,
-  .testimonial-grid {
-    @apply grid-cols-1;
-  }
-
-  .form__row {
-    @apply flex-col gap-0;
-  }
-
-  .site-footer__grid {
-    @apply grid-cols-1;
-  }
 }
