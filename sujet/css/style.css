@@ -66,9 +66,9 @@ img {
 /* ============================= Boutons ============================= */
 
 .btn {
-  @apply inline-flex items-center gap-2 px-6 py-3 font-semibold no-underline cursor-pointer border-2 border-transparent;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  @apply inline-flex items-center gap-2 px-6 py-3 font-semibold no-underline cursor-pointer
+         border-2 border-transparent rounded-full
+         transition duration-200 ease-[ease];
 }
 
 .btn--primary {
@@ -77,7 +77,7 @@ img {
 }
 
 .btn--primary:hover {
-  @apply bg-(--color-primary-dark) transform translate-y-0.5 shadow-(--shadow);
+  @apply bg-(--color-primary-dark) -translate-y-0.5 shadow-(--shadow);
 }
 
 .btn--outline {
@@ -93,21 +93,16 @@ img {
 
 .site-header {
   @apply sticky top-0 z-20 bg-(--color-bg-alt) border-b border-solid border-(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .site-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-2) 0;
+  @apply flex items-center justify-between py-(--space-2) px-0;
 }
 
 .logo {
+
+  @apply font-(family-name:--font-heading) text-[1.4rem];
+
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 700;
