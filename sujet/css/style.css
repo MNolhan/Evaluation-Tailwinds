@@ -4,6 +4,8 @@
    Écrit desktop-first (les media queries resserrent pour petit écran).
    ========================================================================== */
 
+@import "tailwindcss";
+
 :root {
   --color-bg: #faf7f2;
   --color-bg-alt: #ffffff;
@@ -37,17 +39,11 @@
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.6;
+  @apply m-0 font-(family-name:--font-body) text-(--color-text) bg-(--color-bg) leading-[1.6];
 }
 
 h1, h2, h3 {
-  font-family: var(--font-heading);
-  margin: 0 0 var(--space-2);
-  line-height: 1.2;
+  @apply font-(family-name:--font-heading) mb-(--space-2) leading-[1.2];
 }
 
 p {
@@ -64,9 +60,7 @@ img {
 }
 
 .container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--space-3);
+  @apply max-w-(--container-width) mx-auto px-(--space-3) py-0;
 }
 
 /* ============================= Boutons ============================= */
