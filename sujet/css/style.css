@@ -100,14 +100,7 @@ img {
 }
 
 .logo {
-
-  @apply font-(family-name:--font-heading) text-[1.4rem];
-
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
+  @apply font-(family-name:--font-heading) text-[1.4rem] font-bold text-(--color-text) no-underline;
 }
 
 .logo__accent {
@@ -115,30 +108,15 @@ img {
 }
 
 .nav__toggle {
-  display: none;
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 0.5rem 0.75rem;
-  font-size: 1.25rem;
-  cursor: pointer;
+  @apply hidden bg-transparent border border-(--color-border) rounded-(--radius) px-3 py-2 text-xl cursor-pointer;
 }
 
 .nav__list {
-  display: flex;
-  gap: var(--space-4);
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @apply flex gap-(--space-4) list-none m-0 p-0;
 }
 
 .nav__link {
-  text-decoration: none;
-  color: var(--color-text-muted);
-  font-weight: 600;
-  padding: 0.25rem 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  @apply no-underline text-(--color-text-muted) font-semibold py-1 px-0 border-b-2 border-transparent transition-colors duration-200 ease-[ease];
 }
 
 .nav__link:hover,
@@ -152,9 +130,7 @@ img {
 }
 
 .header__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+  @apply flex items-center gap-(--space-3);
 }
 
 /* ============================= Hero ============================= */
@@ -165,10 +141,7 @@ img {
 }
 
 .hero__inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-5);
-  align-items: center;
+  @apply grid grid-cols-[1.1fr_0.9fr] gap-(--space-5) items-center;
 }
 
 /* Un <img> comme enfant direct d'une grille garde sa taille intrinsèque
@@ -184,12 +157,7 @@ img {
 }
 
 .hero__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-1);
+  @apply uppercase tracking-widest text-[0.8rem] font-bold text-(--color-primary) mb-(--space-1);
 }
 
 .hero__title {
@@ -197,22 +165,15 @@ img {
 }
 
 .hero__subtitle {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  max-width: 38ch;
+  @apply text-(--color-text-muted) text-[1.125rem] max-w-[38ch];
 }
 
 .hero__actions {
-  display: flex;
-  gap: var(--space-2);
-  margin-top: var(--space-3);
+  @apply flex gap-(--space-2) mt-(--space-3);
 }
 
 .hero__image {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  @apply rounded-(--radius-lg) shadow-(--shadow-lg) aspect-[4/3] object-cover;
 }
 
 @keyframes fade-in-up {
