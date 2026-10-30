@@ -198,17 +198,11 @@ img {
 }
 
 .section__header {
-  text-align: center;
-  max-width: 60ch;
-  margin: 0 auto var(--space-5);
+  @apply text-center max-w-[60ch] mt-0 mx-auto mb-(--space-5);
 }
 
 .section__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  @apply uppercase tracking-widest text-[0.8rem] font-bold text-(--color-primary);
 }
 
 .section__title {
@@ -222,18 +216,11 @@ img {
 /* ============================= Grille de plats (cartes) ============================= */
 
 .dish-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  @apply grid grid-cols-[repeat(3,1fr)] gap-(--space-4); 
 }
 
 .dish-card {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  @apply bg-(--color-bg-alt) border border-(--color-border) rounded-(--radius-lg) overflow-hidden shadow-(--shadow) transition duration-250 ease-[ease];
 }
 
 .dish-card:hover {
@@ -242,9 +229,7 @@ img {
 }
 
 .dish-card__image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  @apply w-full h-[200px] object-cover;
 }
 
 .dish-card__body {
@@ -252,10 +237,7 @@ img {
 }
 
 .dish-card__top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-1);
+  @apply flex items-start justify-between gap-(--space-1);
 }
 
 .dish-card__title {
@@ -264,9 +246,7 @@ img {
 }
 
 .dish-card__price {
-  font-weight: 700;
-  color: var(--color-primary);
-  white-space: nowrap;
+  @apply font-bold text-(--color-primary) whitespace-nowrap;
 }
 
 .dish-card__desc {
@@ -275,15 +255,7 @@ img {
 }
 
 .badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(162, 59, 46, 0.1);
-  color: var(--color-primary);
+  @apply inline-block text-[0.7rem] font-bold uppercase tracking-wider py-[0.2rem] px-[0.6rem] rounded-full bg-[#a23b2e]/10 text-(--color-primary);
 }
 
 .badge--veggie {
