@@ -404,22 +404,15 @@ img {
 /* ============================= Footer ============================= */
 
 .site-footer {
-  background: #231b17;
-  color: #d8cfc5;
-  padding: var(--space-5) 0 var(--space-3);
+  @apply bg-[#231b17] text-[#d8cfc5] py-(--space-5) px-(--space-3);
 }
 
 .site-footer__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
+  @apply grid grid-cols-3 gap-(--space-4) mb-(--space-4);
 }
 
 .site-footer__title {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: var(--space-2);
+  @apply text-[#fff] text-[1rem] mb-(--space-2);
 }
 
 .site-footer address {
@@ -428,11 +421,7 @@ img {
 }
 
 .site-footer__bottom {
-  border-top: 1px solid #3a2f28;
-  padding-top: var(--space-3);
-  font-size: 0.85rem;
-  color: #8a7d70;
-  text-align: center;
+  @apply border-t border-[#3a2f28] pt-(--space-3) text-[0.85rem] text-[#8a7d70] text-center; 
 }
 
 /* ============================= Responsive (desktop-first) ============================= */
