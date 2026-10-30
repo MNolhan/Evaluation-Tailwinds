@@ -289,24 +289,15 @@ img {
 }
 
 .menu-category__title {
-  border-bottom: 2px solid var(--color-accent);
-  padding-bottom: var(--space-1);
-  margin-bottom: var(--space-3);
+  @apply border-b-2 border-(--color-accent) pb-(--space-1) mb-(--space-3);
 }
 
 .menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: var(--space-3);
+  @apply list-none m-0 p-0 grid gap-(--space-3); 
 }
 
 .menu-item {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-3);
-  align-items: baseline;
+  @apply flex justify-between gap-(--space-3) items-baseline; 
 }
 
 .menu-item__name {
@@ -314,15 +305,11 @@ img {
 }
 
 .menu-item__desc {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  display: block;
+  @apply text-(--color-text-muted) text-[0.9rem] block;
 }
 
 .menu-item__price {
-  font-weight: 700;
-  color: var(--color-primary);
-  white-space: nowrap;
+  @apply font-bold text-(--color-primary) whitespace-nowrap;
 }
 
 /* ============================= Horaires ============================= */
