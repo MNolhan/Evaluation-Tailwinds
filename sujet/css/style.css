@@ -266,16 +266,11 @@ img {
 /* ============================= Témoignages ============================= */
 
 .testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  @apply grid grid-cols-[repeat(3,1fr)] gap-(--space-4); 
 }
 
 .testimonial {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
+  @apply bg-(--color-bg) border border-(--color-border) rounded-(--radius-lg) p-(--space-4);
 }
 
 .testimonial__quote {
@@ -284,12 +279,7 @@ img {
 }
 
 .testimonial__author {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+  @apply flex items-center gap-(--space-2) font-semibold text-[0.9rem] text-(--color-text-muted);
 }
 
 /* ============================= Menu (page carte) ============================= */
