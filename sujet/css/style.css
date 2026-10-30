@@ -386,12 +386,7 @@ img {
 /* ============================= Dialog de réservation ============================= */
 
 .reservation-dialog {
-  border: none;
-  border-radius: var(--radius-lg);
-  padding: 0;
-  max-width: 440px;
-  width: 100%;
-  box-shadow: var(--shadow-lg);
+  @apply border-none rounded-(--radius-lg) p-0 max-w-110 w-full shadow-(--shadow-lg);
 }
 
 .reservation-dialog::backdrop {
@@ -403,12 +398,7 @@ img {
 }
 
 .reservation-dialog__close {
-  float: right;
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  cursor: pointer;
-  color: var(--color-text-muted);
+  @apply float-right bg-none border-none text-[1.25rem] cursor-pointer text-(--color-text-muted);
 }
 
 /* ============================= Footer ============================= */
