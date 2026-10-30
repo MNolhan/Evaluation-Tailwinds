@@ -6,6 +6,10 @@
 
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-2k: 2560px;
+}
+
 :root {
   --color-bg: #faf7f2;
   --color-bg-alt: #ffffff;
@@ -59,7 +63,7 @@ img {
 }
 
 .container {
-  @apply max-w-(--container-width) mx-auto px-(--space-3) py-0;
+  @apply max-w-(--container-width) mx-auto px-(--space-3) py-0 2k:max-w-[1600px];
 }
 
 /* ============================= Boutons ============================= */
@@ -100,10 +104,6 @@ img {
   @apply font-(family-name:--font-heading) text-[1.4rem] font-bold text-(--color-text) no-underline;
 }
 
-.logo__accent {
-  color: var(--color-primary);
-}
-
 .nav__toggle {
   @apply hidden bg-transparent border border-(--color-border) rounded-(--radius) px-3 py-2 text-xl cursor-pointer;
 }
@@ -118,12 +118,7 @@ img {
 
 .nav__link:hover,
 .nav__link--active {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.nav__list--mobile-only {
-  display: none;
+  @apply text-(--color-primary) border-(--color-primary);
 }
 
 .header__actions {
@@ -132,33 +127,17 @@ img {
 
 /* ============================= Hero ============================= */
 
-.hero {
-  background: linear-gradient(135deg, #fff 0%, var(--color-bg) 100%);
-  padding: var(--space-6) 0;
-}
-
 .hero__inner {
-  @apply grid grid-cols-[1.1fr_0.9fr] gap-(--space-5) items-center;
+  @apply grid grid-cols-[1.1fr_0.9fr] gap-(--space-5) items-center *:min-w-0;
 }
 
 /* Un <img> comme enfant direct d'une grille garde sa taille intrinsèque
    comme largeur minimale par défaut (même avec max-width:100% dessus) :
    sans ce reset, il peut forcer toute la page à scroller horizontalement
    sur petit écran. */
-.hero__inner > * {
-  min-width: 0;
-}
-
-.hero__content {
-  animation: fade-in-up 0.6s ease both;
-}
 
 .hero__eyebrow {
   @apply uppercase tracking-widest text-[0.8rem] font-bold text-(--color-primary) mb-(--space-1);
-}
-
-.hero__title {
-  font-size: 3rem;
 }
 
 .hero__subtitle {
@@ -186,28 +165,12 @@ img {
 
 /* ============================= Sections génériques ============================= */
 
-.section {
-  padding: var(--space-6) 0;
-}
-
-.section--alt {
-  background: var(--color-bg-alt);
-}
-
 .section__header {
   @apply text-center max-w-[60ch] mt-0 mx-auto mb-(--space-5);
 }
 
 .section__eyebrow {
   @apply uppercase tracking-widest text-[0.8rem] font-bold text-(--color-primary);
-}
-
-.section__title {
-  font-size: 2.25rem;
-}
-
-.section__intro {
-  color: var(--color-text-muted);
 }
 
 /* ============================= Grille de plats (cartes) ============================= */
@@ -217,47 +180,25 @@ img {
 }
 
 .dish-card {
-  @apply bg-(--color-bg-alt) border border-(--color-border) rounded-(--radius-lg) overflow-hidden shadow-(--shadow) transition duration-250 ease-[ease];
-}
-
-.dish-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  @apply bg-(--color-bg-alt) border border-(--color-border) rounded-(--radius-lg) overflow-hidden shadow-(--shadow) 
+        transition duration-250 ease-[ease]
+        hover:translate-y-[-6px] hover:shadow-(--shadow-lg);
 }
 
 .dish-card__image {
   @apply w-full h-[200px] object-cover;
 }
 
-.dish-card__body {
-  padding: var(--space-3);
-}
-
 .dish-card__top {
   @apply flex items-start justify-between gap-(--space-1);
-}
-
-.dish-card__title {
-  font-size: 1.15rem;
-  margin: 0;
 }
 
 .dish-card__price {
   @apply font-bold text-(--color-primary) whitespace-nowrap;
 }
 
-.dish-card__desc {
-  color: var(--color-text-muted);
-  font-size: 0.925rem;
-}
-
 .badge {
   @apply inline-block text-[0.7rem] font-bold uppercase tracking-wider py-[0.2rem] px-[0.6rem] rounded-full bg-[#a23b2e]/10 text-(--color-primary);
-}
-
-.badge--veggie {
-  background: rgba(90, 140, 90, 0.15);
-  color: #3f6b3f;
 }
 
 /* ============================= Témoignages ============================= */
@@ -270,20 +211,11 @@ img {
   @apply bg-(--color-bg) border border-(--color-border) rounded-(--radius-lg) p-(--space-4);
 }
 
-.testimonial__quote {
-  font-style: italic;
-  margin-bottom: var(--space-2);
-}
-
 .testimonial__author {
   @apply flex items-center gap-(--space-2) font-semibold text-[0.9rem] text-(--color-text-muted);
 }
 
 /* ============================= Menu (page carte) ============================= */
-
-.menu-category {
-  margin-bottom: var(--space-5);
-}
 
 .menu-category__title {
   @apply border-b-2 border-(--color-accent) pb-(--space-1) mb-(--space-3);
@@ -297,10 +229,6 @@ img {
   @apply flex justify-between gap-(--space-3) items-baseline; 
 }
 
-.menu-item__name {
-  font-weight: 700;
-}
-
 .menu-item__desc {
   @apply text-(--color-text-muted) text-[0.9rem] block;
 }
@@ -312,7 +240,7 @@ img {
 /* ============================= Horaires ============================= */
 
 .hours-table {
-  @apply w-full border-collapse bg-(--color-bg-alt) rounded-(--radius) overflow-hidden shadow-(--shadow);
+  @apply w-full border-collapse bg-(--color-bg-alt) rounded-(--radius) overflow-hidden shadow-(--shadow) border-0;
 }
 
 .hours-table th,
@@ -320,38 +248,16 @@ img {
   @apply text-left py-(--space-2) px-(--space-3) border-b border-(--color-border);
 }
 
-.hours-table tr:last-child td {
-  border-bottom: none;
-}
-
 /* ============================= FAQ (details natif) ============================= */
-
-.faq-title {
-  margin-top: var(--space-4);
-}
 
 .faq {
   @apply bg-(--color-bg-alt) border border-(--color-border) rounded-(--radius) py-(--space-2) px-(--space-3) mb-(--space-2);
-}
-
-.faq__summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.faq__answer {
-  color: var(--color-text-muted);
-  margin-top: var(--space-2);
 }
 
 /* ============================= Formulaire de contact ============================= */
 
 .contact-grid {
   @apply grid grid-cols-2 gap-(--space-5);
-}
-
-.form__group {
-  margin-bottom: var(--space-3);
 }
 
 .form__label {
@@ -361,37 +267,14 @@ img {
 .form__input,
 .form__textarea,
 .form__select {
-  @apply w-full py-[0.65rem] px-[0.85rem] border border-(--color-border) rounded-(--radius) bg-(--color-bg-alt);
-}
-
-.form__input:focus,
-.form__textarea:focus,
-.form__select:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 1px;
-}
-
-.form__row {
-  display: flex;
-  gap: var(--space-2);
-}
-
-.form__row .form__group {
-  flex: 1;
+  @apply w-full py-[0.65rem] px-[0.85rem] border border-(--color-border) rounded-(--radius) bg-(--color-bg-alt)
+        focus:outline-2 outline-(--color-primary) outline-offset-1;
 }
 
 /* ============================= Dialog de réservation ============================= */
 
 .reservation-dialog {
-  @apply border-none rounded-(--radius-lg) p-0 max-w-110 w-full shadow-(--shadow-lg);
-}
-
-.reservation-dialog::backdrop {
-  background: rgba(43, 36, 32, 0.5);
-}
-
-.reservation-dialog__inner {
-  padding: var(--space-4);
+  @apply border-none rounded-(--radius-lg) p-0 max-w-110 w-full shadow-(--shadow-lg) backdrop:bg-[rgba(43,36,32,0.5)];
 }
 
 .reservation-dialog__close {
@@ -401,7 +284,7 @@ img {
 /* ============================= Footer ============================= */
 
 .site-footer {
-  @apply bg-[#231b17] text-[#d8cfc5] py-(--space-5) px-(--space-3);
+  @apply bg-[#231b17] text-[#d8cfc5] py-(--space-5) px-(--space-3) font-normal text-[#bcb0a4];
 }
 
 .site-footer__grid {
@@ -412,11 +295,6 @@ img {
   @apply text-[#fff] text-[1rem] mb-(--space-2);
 }
 
-.site-footer address {
-  font-style: normal;
-  color: #bcb0a4;
-}
-
 .site-footer__bottom {
   @apply border-t border-[#3a2f28] pt-(--space-3) text-[0.85rem] text-[#8a7d70] text-center; 
 }
@@ -425,24 +303,24 @@ img {
 
 @media (max-width: 900px) {
   .hero__inner {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1; 
   }
 
   .hero__title {
-    font-size: 2.25rem;
+    @apply text-[2.25rem];
   }
 
   .dish-grid,
   .testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
+    @apply grid-cols-2;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1;
   }
 
   .site-footer__grid {
-    grid-template-columns: repeat(2, 1fr);
+    @apply grid-cols-2;
   }
 }
 
@@ -455,12 +333,11 @@ img {
      la place au logo + burger ; il reste accessible via le hero et le
      menu mobile ouvert. */
   .header__actions {
-    display: none;
+    @apply hidden;
   }
 
   .nav__list--mobile-only {
-    display: list-item;
-    margin-top: var(--space-1);
+    @apply list-item mt-(--space-1);
   }
 
   .nav {
@@ -468,34 +345,31 @@ img {
   }
 
   .nav--open {
-    display: block;
+    @apply block;
   }
 
   .nav__list {
-    flex-direction: column;
-    gap: var(--space-2);
+    @apply flex-col gap-(--space-2);
   }
 
   .hero__title {
-    font-size: 1.75rem;
+    @apply text-[1.75rem];
   }
 
   .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
+    @apply flex-col items-stretch;
   }
 
   .dish-grid,
   .testimonial-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1;
   }
 
   .form__row {
-    flex-direction: column;
-    gap: 0;
+    @apply flex-col gap-0;
   }
 
   .site-footer__grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1;
   }
 }

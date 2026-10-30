@@ -11,16 +11,16 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="index.html" class="logo">La Table <span class="logo__accent">d'Amélie</span></a>
+      <a href="index.html" class="logo">La Table <span class="text-(--color-primary)">d'Amélie</span></a>
 
       <button type="button" class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
       <nav class="nav" aria-label="Principale">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link nav__link--active">Accueil</a></li>
-          <li><a href="menu.html" class="nav__link">La Carte</a></li>
-          <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li class="nav__list--mobile-only"><button type="button" class="btn btn--primary" data-open-reservation>Réserver</button></li>
+          <li><a href="index.html" class="nav__link hover:text-(--color-primary) hover:border-(--color-primary)">Accueil</a></li>
+          <li><a href="menu.html" class="nav__link hover:text-(--color-primary) hover:border-(--color-primary)">La Carte</a></li>
+          <li><a href="contact.html" class="nav__link hover:text-(--color-primary) hover:border-(--color-primary)">Contact</a></li>
+          <li class="hidden"><button type="button" class="btn btn--primary" data-open-reservation>Réserver</button></li>
         </ul>
       </nav>
 
@@ -31,11 +31,11 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="bg-linear-135 from-white to-(--color-bg) py-(--space-6) px-0">
       <div class="container hero__inner">
-        <div class="hero__content">
+        <div class="animate-[fade-in-up_0.6s_ease_both]">
           <p class="hero__eyebrow">Bistrot familial depuis 1998</p>
-          <h1 class="hero__title">Une cuisine généreuse, au cœur de Lyon</h1>
+          <h1 class="text-[1.75rem] sm:text-[2.25rem] lg:text-[3rem] font-bold">Une cuisine généreuse, au cœur de Lyon</h1>
           <p class="hero__subtitle">
             Des produits frais, une carte qui change au fil des saisons, et
             l'accueil chaleureux d'une maison de famille.
@@ -53,12 +53,12 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="plats-title">
+    <section class="py-(--space-6) px-0" aria-labelledby="plats-title">
       <div class="container">
         <header class="section__header">
           <p class="section__eyebrow">Suggestions du moment</p>
-          <h2 class="section__title" id="plats-title">Nos plats signature</h2>
-          <p class="section__intro">
+          <h2 class="text-[2.25rem]" id="plats-title">Nos plats signature</h2>
+          <p class="text-(--color-text-muted)">
             Une sélection de plats qui reviennent, saison après saison, parce
             que nos habitués ne nous laisseraient pas les retirer de la carte.
           </p>
@@ -67,63 +67,63 @@
         <div class="dish-grid">
           <article class="dish-card">
             <img class="dish-card__image" src="https://picsum.photos/seed/amelie-boeuf/400/300" alt="Joue de bœuf braisée, purée maison" loading="lazy" />
-            <div class="dish-card__body">
+            <div class="p-(--space-3)">
               <div class="dish-card__top">
-                <h3 class="dish-card__title">Joue de bœuf braisée</h3>
+                <h3 class="text-[1.15rem] m-0">Joue de bœuf braisée</h3>
                 <span class="dish-card__price">18 €</span>
               </div>
-              <p class="dish-card__desc">Braisée 6 heures au vin rouge, purée de pommes de terre maison.</p>
+              <p class="text-(--color-text-muted) text-[0.925rem]">Braisée 6 heures au vin rouge, purée de pommes de terre maison.</p>
             </div>
           </article>
 
           <article class="dish-card">
             <img class="dish-card__image" src="https://picsum.photos/seed/amelie-risotto/400/300" alt="Risotto aux champignons de saison" loading="lazy" />
-            <div class="dish-card__body">
+            <div class="p-(--space-3)">
               <div class="dish-card__top">
-                <h3 class="dish-card__title">Risotto aux champignons</h3>
+                <h3 class="text-[1.15rem] m-0">Risotto aux champignons</h3>
                 <span class="dish-card__price">15 €</span>
               </div>
-              <span class="badge badge--veggie">Végétarien</span>
-              <p class="dish-card__desc">Champignons de saison, parmesan affiné 24 mois, huile de truffe.</p>
+              <span class="badge bg-[#5a8c5a]/15 text-[#3f6b3f]">Végétarien</span>
+              <p class="text-(--color-text-muted) text-[0.925rem]">Champignons de saison, parmesan affiné 24 mois, huile de truffe.</p>
             </div>
           </article>
 
           <article class="dish-card">
             <img class="dish-card__image" src="https://picsum.photos/seed/amelie-tarte/400/300" alt="Tarte fine aux pommes" loading="lazy" />
-            <div class="dish-card__body">
+            <div class="p-(--space-3)">
               <div class="dish-card__top">
-                <h3 class="dish-card__title">Tarte fine aux pommes</h3>
+                <h3 class="text-[1.15rem] m-0">Tarte fine aux pommes</h3>
                 <span class="dish-card__price">8 €</span>
               </div>
-              <p class="dish-card__desc">Pommes caramélisées, pâte feuilletée maison, glace vanille de Madagascar.</p>
+              <p class="text-(--color-text-muted) text-[0.925rem]">Pommes caramélisées, pâte feuilletée maison, glace vanille de Madagascar.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt" aria-labelledby="avis-title">
+    <section class="py-(--space-6) px-0 bg-(--color-bg-alt)" aria-labelledby="avis-title">
       <div class="container">
         <header class="section__header">
           <p class="section__eyebrow">Ils en parlent mieux que nous</p>
-          <h2 class="section__title" id="avis-title">Avis de nos clients</h2>
+          <h2 class="text-[2.25rem]" id="avis-title">Avis de nos clients</h2>
         </header>
 
         <div class="testimonial-grid">
           <article class="testimonial">
-            <p class="testimonial__quote">
+            <p class="font-italic mb-(--space-2)">
               "Un accueil formidable et une cuisine qui sent le fait-maison. On y retourne à chaque passage à Lyon."
             </p>
             <p class="testimonial__author">— Claire M.</p>
           </article>
           <article class="testimonial">
-            <p class="testimonial__quote">
+            <p class="font-italic mb-(--space-2)">
               "Le risotto aux champignons est devenu notre rituel du dimanche soir. Simplement excellent."
             </p>
             <p class="testimonial__author">— Karim B.</p>
           </article>
           <article class="testimonial">
-            <p class="testimonial__quote">
+            <p class="font-italic mb-(--space-2)">
               "Petite salle chaleureuse, service attentionné, et l'addition reste raisonnable. Parfait."
             </p>
             <p class="testimonial__author">— Julie & Marc</p>
@@ -146,7 +146,7 @@
         </div>
         <div>
           <h2 class="site-footer__title">Contact</h2>
-          <address>
+          <address class="font-normal text-[#bcb0a4]">
             12 rue des Tables Claudiennes, 69005 Lyon<br />
             <a href="tel:+33478000000">04 78 00 00 00</a><br />
             <a href="mailto:contact@table-amelie.fr">contact@table-amelie.fr</a>
@@ -161,25 +161,25 @@
 
   <!-- Dialog native de réservation, partagée par toutes les pages -->
   <dialog id="reservation-dialog" class="reservation-dialog">
-    <div class="reservation-dialog__inner">
+    <div class="p-(--space-4)">
       <button type="button" class="reservation-dialog__close" aria-label="Fermer">✕</button>
       <h2>Réserver une table</h2>
       <form method="dialog">
-        <div class="form__row">
-          <div class="form__group">
+        <div class="flex flex-col sm:flex-row sm:gap-(--space-2) flex-1">
+          <div class="mb-(--space-3) flex-1">
             <label class="form__label" for="resa-date">Date</label>
             <input class="form__input" type="date" id="resa-date" name="date" required />
           </div>
-          <div class="form__group">
+          <div class="mb-(--space-3) flex-1">
             <label class="form__label" for="resa-time">Heure</label>
             <input class="form__input" type="time" id="resa-time" name="time" required />
           </div>
         </div>
-        <div class="form__group">
+        <div class="mb-(--space-3) flex-1">
           <label class="form__label" for="resa-guests">Nombre de personnes</label>
           <input class="form__input" type="number" id="resa-guests" name="guests" min="1" max="12" value="2" required />
         </div>
-        <div class="form__group">
+        <div class="mb-(--space-3) flex-1">
           <label class="form__label" for="resa-email">Email</label>
           <input class="form__input" type="email" id="resa-email" name="email" required />
         </div>
